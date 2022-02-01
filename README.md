@@ -25,7 +25,7 @@ Check to see if there are any existing keys available for use
 `aws kms list-keys`
 
 If there are no keys, go to the AWS Console and navigate to Key Management Service. There, generate a new key with as the admin user and make sure that your admin account is specified as an eligible user of the cryptographic operations.
-
+<code>
 {
     "Id": "key-consolepolicy-3",
     "Version": "2012-10-17",
@@ -80,6 +80,7 @@ If there are no keys, go to the AWS Console and navigate to Key Management Servi
         },
     \]
 }
+</code>
 
 List all KMS keys again and make sure it is there now. That key ID will be used to encrypt and decrypt our plaintext.
 
