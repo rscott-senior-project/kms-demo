@@ -105,9 +105,9 @@ Create the bucket using the CLI and verify that the bucket now exists in the con
 
 Navigate into the bucket permissions and block all public access to the bucket:
 
-aws s3api put-public-access-block --bucket "rsp-sse-demo" \\ 
+`aws s3api put-public-access-block --bucket "rsp-sse-demo" \\ 
 --public-access-block-configuration "BlockPublicAcls=true,IgnorePublicAcls=true,\\
-BlockPublicPolicy=true,RestrictPublicBuckets=true"
+BlockPublicPolicy=true,RestrictPublicBuckets=true"`
 
 Permissions should say that Block _all_ access in On now. Next, hit the following command and verify that server-side encryption is now enabled:
 
