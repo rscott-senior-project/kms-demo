@@ -26,60 +26,6 @@ Check to see if there are any existing keys available for use
 
 If there are no keys, go to the AWS Console and navigate to Key Management Service. There, generate a new key with as the admin user and make sure that your admin account is specified as an eligible user of the cryptographic operations.
 
-{\n
-    \t"Id": "key-consolepolicy-3",
-    "Version": "2012-10-17",
-    "Statement": \[
-        {
-            "Sid": "Enable IAM User Permissions",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::170976071768:root"
-            },
-            "Action": "kms:\*",
-            "Resource": "\*"
-        },
-        {
-            "Sid": "Allow access for Key Administrators",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::170976071768:user/rob-senior-project-admin"
-            },
-            "Action": \[
-                "kms:Create\*",
-                "kms:Describe\*",
-                "kms:Enable\*",
-                "kms:List\*",
-                "kms:Put\*",
-                "kms:Update\*",
-                "kms:Revoke\*",
-                "kms:Disable\*",
-                "kms:Get\*",
-                "kms:Delete\*",
-                "kms:TagResource",
-                "kms:UntagResource",
-                "kms:ScheduleKeyDeletion",
-                "kms:CancelKeyDeletion"
-            \],
-            "Resource": "\*"
-        },
-        {
-            "Sid": "Allow use of the key",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::170976071768:user/rob-senior-project-admin"
-            },
-            "Action": \[
-                "kms:Encrypt",
-                "kms:Decrypt",
-                "kms:ReEncrypt\*",
-                "kms:GenerateDataKey\*",
-                "kms:DescribeKey"
-            \],
-            "Resource": "\*"
-        },
-    \]
-}
 
 List all KMS keys again and make sure it is there now. That key ID will be used to encrypt and decrypt our plaintext.
 
