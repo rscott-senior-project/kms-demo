@@ -1,0 +1,15 @@
+{
+    "Version": "2012-10-17",
+    "Id": "keydefault3",
+    "Statement": [
+        {
+            "Sid": "Enable IAM User Permissions",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::170976071768:user/rob-senior-project-admin"
+            },
+            "Action": "kms:*",
+            "Resource": "*"
+        }
+    ]
+}
