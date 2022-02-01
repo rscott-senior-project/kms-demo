@@ -111,9 +111,9 @@ BlockPublicPolicy=true,RestrictPublicBuckets=true"
 
 Permissions should say that Block _all_ access in On now. Next, hit the following command and verify that server-side encryption is now enabled:
 
-aws s3api put-bucket-encryption --bucket rsp-sse-demo \\
+`aws s3api put-bucket-encryption --bucket rsp-sse-demo \\
 --server-side-encryption-configuration '{"Rules": \\
-\[{"ApplyServerSideEncryptionByDefault": {"SSEAlgorithm": "AES256"}}\]}'
+\[{"ApplyServerSideEncryptionByDefault": {"SSEAlgorithm": "AES256"}}\]}'`
 
 S3 is going to use SSE-S3, a form of server-side encryption. Lets break down the types of SSE within S3.
 
