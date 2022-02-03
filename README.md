@@ -71,22 +71,22 @@ To get the ARN of our KMS key, hit the following command:
 
 To encrypt the file, use the following command:
 
-aws-encryption-cli --encrypt \\
+`aws-encryption-cli --encrypt \\
 --input large-data.txt \\
 --wrapping-keys key=<KEY\_ARN> \\
 --metadata-output ./metadata \\
 --output encrypted-large-data
-
+`
 Now our data is encrypted within `encrypted-large-data`. The data key was never handled by use, but it was generated, encrypted our file as plaintext, and then encrypted using the `wrapping-keys` parameter.
 
 To decrypt the data, we will use a similar decrypt command:
-
+`
 aws-encryption-cli --decrypt \\
 --input encrypted-large-data \\
 --wrapping-keys key=<KEY\_ARN> \\
 --metadata-output ./metadata \\
 --output decrypted-large-data.txt
-
+`
 Enabling Server-Side Encryption
 -------------------------------
 
